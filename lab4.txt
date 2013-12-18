@@ -72,11 +72,11 @@ begin
                   y:=x-f1(x)/f2(x);
                   Chart1LineSeries1.addXY(x,y,'',clred);
                   TEMP:=abs(y-x);
-                  x:=y;
+                  x:=x;
                 end;
           Label6.Caption:=floatToStrf(y,FFFixed,4,2);
        end
-    else showmessage('Не грусти');
+    else showmessage('РќРµ РіСЂСѓСЃС‚Рё');
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
