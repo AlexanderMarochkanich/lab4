@@ -65,7 +65,7 @@ begin
     if (code1=0) and (code2=0) and (code3=0) then
        begin
           if (f1(a)*f2(a))>0 then x:=a
-             else x:=b;
+             else x:=y;
           TEMP:=1;
           while TEMP>e do
                 begin
