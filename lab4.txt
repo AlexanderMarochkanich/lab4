@@ -1,0 +1,95 @@
+unit Unit1;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, TAGraph, TASeries, Forms, Controls, Graphics,
+  Dialogs, StdCtrls;
+
+type
+
+  { TForm1 }
+
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Chart1: TChart;
+    Chart1LineSeries1: TLineSeries;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm1 }
+
+function f1(x:real):real;
+begin
+    Result:=x-(sin(x)/cos(x));
+end;
+
+function f2(x:real):real;
+begin
+    Result:=-(sqr(sin(x)/cos(x)));
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var a,b,x,y,TEMP,e:real;
+    code1,code2,code3:byte;
+begin
+    val(Edit1.Text,a,code1);
+    val(Edit2.Text,b,code2);
+    val(Edit3.Text,e,code3);
+    if (code1=0) and (code2=0) and (code3=0) then
+       begin
+          if (f1(a)*f2(a))>0 then x:=a
+             else x:=b;
+          TEMP:=1;
+          while TEMP>e do
+                begin
+                  y:=x-f1(x)/f2(x);
+                  Chart1LineSeries1.addXY(x,y,'',clred);
+                  TEMP:=abs(y-x);
+                  x:=y;
+                end;
+          Label6.Caption:=floatToStrf(y,FFFixed,4,2);
+       end
+    else showmessage('Не грусти');
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+Edit1.Text := '';
+Edit2.Text := '';
+Edit3.Text := '';
+Chart1lineseries1.Clear;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  Application.Terminate
+end;
+
+end.
