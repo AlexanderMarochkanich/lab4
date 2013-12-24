@@ -1,0 +1,173 @@
+object Form1: TForm1
+  Left = 298
+  Height = 528
+  Top = 104
+  Width = 852
+  Caption = 'Лабораторная работа студента Марочканича Александра 321б'
+  ClientHeight = 528
+  ClientWidth = 852
+  LCLVersion = '1.0.1.3'
+  object Chart1: TChart
+    Left = 256
+    Height = 248
+    Top = 16
+    Width = 584
+    AxisList = <    
+      item
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+      end    
+      item
+        Alignment = calBottom
+        Minors = <>
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    ParentColor = False
+    object Chart1LineSeries1: TLineSeries
+      LinePen.Color = clRed
+    end
+    object Chart1FuncSeries1: TFuncSeries
+    end
+  end
+  object CheckBox1: TCheckBox
+    Left = 472
+    Height = 17
+    Top = 296
+    Width = 57
+    Caption = 'Корень'
+    TabOrder = 1
+  end
+  object CheckBox2: TCheckBox
+    Left = 472
+    Height = 17
+    Top = 328
+    Width = 86
+    Caption = 'Ход решения'
+    TabOrder = 2
+  end
+  object CheckBox3: TCheckBox
+    Left = 472
+    Height = 17
+    Top = 360
+    Width = 58
+    Caption = 'График'
+    TabOrder = 3
+  end
+  object Memo1: TMemo
+    Left = 16
+    Height = 248
+    Top = 16
+    Width = 224
+    TabOrder = 4
+  end
+  object Edit1: TEdit
+    Left = 344
+    Height = 21
+    Top = 296
+    Width = 80
+    TabOrder = 5
+  end
+  object Edit2: TEdit
+    Left = 344
+    Height = 21
+    Top = 328
+    Width = 80
+    TabOrder = 6
+  end
+  object Label1: TLabel
+    Left = 192
+    Height = 14
+    Top = 296
+    Width = 141
+    Caption = 'Введите начало координат'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 198
+    Height = 14
+    Top = 328
+    Width = 135
+    Caption = 'Введите конец координат'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 208
+    Height = 33
+    Top = 456
+    Width = 80
+    Caption = 'Сохранить'
+    OnClick = Button1Click
+    TabOrder = 7
+  end
+  object Button2: TButton
+    Left = 323
+    Height = 33
+    Top = 456
+    Width = 85
+    Caption = 'Загрузить'
+    OnClick = Button2Click
+    TabOrder = 8
+  end
+  object Button3: TButton
+    Left = 440
+    Height = 33
+    Top = 456
+    Width = 96
+    Caption = 'Расчитать'
+    OnClick = Button3Click
+    TabOrder = 9
+  end
+  object Button4: TButton
+    Left = 712
+    Height = 68
+    Top = 432
+    Width = 117
+    Caption = 'Завершить работу'
+    OnClick = Button4Click
+    TabOrder = 10
+  end
+  object Edit4: TEdit
+    Left = 344
+    Height = 21
+    Top = 360
+    Width = 80
+    TabOrder = 11
+  end
+  object Label4: TLabel
+    Left = 267
+    Height = 14
+    Top = 360
+    Width = 66
+    Caption = 'Введите шаг'
+    ParentColor = False
+  end
+  object Button5: TButton
+    Left = 712
+    Height = 49
+    Top = 368
+    Width = 117
+    Caption = 'Спробуй ще ;)'
+    OnClick = Button5Click
+    TabOrder = 12
+  end
+  object OpenDialog1: TOpenDialog
+    FileName = 'D:\lazar\laba4\bd.txt'
+    InitialDir = 'D:\lazar\laba4\'
+    Options = [ofExtensionDifferent, ofEnableSizing, ofViewDetail]
+    left = 56
+    top = 280
+  end
+  object SaveDialog1: TSaveDialog
+    FileName = 'D:\lazar\laba4\sd.txt'
+    InitialDir = 'D:\lazar\laba4\'
+    Options = [ofExtensionDifferent, ofEnableSizing, ofViewDetail]
+    left = 128
+    top = 280
+  end
+end
